@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+    border: none;
+    margin: none;
+    padding: none;
+}
+
+body{
+    background-image: url(../img/home/table.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
