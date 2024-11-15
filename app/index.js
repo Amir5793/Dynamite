@@ -44,8 +44,8 @@ start.addEventListener('click', e => {
         players.style.display = 'none'
         seasons.style.display = 'inline-block'
 
-        const classicSeason = $.querySelector('.classic')
-        classicSeason.addEventListener('click', e => {
+        const zombieZonSeason = $.querySelector('.zombie-zone')
+        zombieZonSeason.addEventListener('click', e => {
             pageFlip.play()
 
             const userNamesCountainer = $.querySelector('.user-names')
@@ -74,8 +74,8 @@ start.addEventListener('click', e => {
         players.style.display = 'none'
         seasons.style.display = 'inline-block'
 
-        const classicSeason = $.querySelector('.classic')
-        classicSeason.addEventListener('click', e => {
+        const zombieZonSeason = $.querySelector('.zombie-zone')
+        zombieZonSeason.addEventListener('click', e => {
             pageFlip.play()
 
             const userNamesCountainer = $.querySelector('.user-names')
@@ -102,8 +102,8 @@ start.addEventListener('click', e => {
         players.style.display = 'none'
         seasons.style.display = 'inline-block'
 
-        const classicSeason = $.querySelector('.classic')
-        classicSeason.addEventListener('click', e => {
+        const zombieZonSeason = $.querySelector('.zombie-zone')
+        zombieZonSeason.addEventListener('click', e => {
             pageFlip.play()
 
             const userNamesCountainer = $.querySelector('.user-names')
@@ -127,6 +127,7 @@ start.addEventListener('click', e => {
 
             let input = $.createElement('input')
             input.className = 'username-input'
+            input.setAttribute('placeholder', `player ${i}`)
             let label = $.createElement('label')
             label.className = 'username-label'
             label.innerHTML =`Player ${i}`
@@ -172,6 +173,8 @@ start.addEventListener('click', e => {
 const creditsOption = $.querySelector('.credits-option')
 
 credits.addEventListener('click', () => {
+    pageFlip.play()
+
     options.style.display = 'none'
     creditsOption.style.display = 'inline-block'
     creditsBack.style.display = 'inline-block'
@@ -183,11 +186,15 @@ const userBack = $.querySelector('.users-back')
 const creditsBack = $.querySelector('.credits-back')
 
 playersBack.addEventListener('click', () => {
+    pageFlip.play()
+
     playersBack.style.display = 'none'
     players.style.display = 'none'
     options.style.display = 'inline-block'
 })
 seasonsBack.addEventListener('click', () => {
+    pageFlip.play()
+
     seasonsBack.style.display = 'none'
     const seasons = $.querySelector('.seasons')
     seasons.style.display = 'none'
@@ -197,6 +204,8 @@ seasonsBack.addEventListener('click', () => {
     userNamesMainCountainer.innerHTML = ''
 })
 userBack.addEventListener('click', () => {
+    pageFlip.play()
+
     userBack.style.display = 'none'
     const userNamesCountainer = $.querySelector(".user-names")
     userNamesCountainer.style.display = 'none'
@@ -205,6 +214,8 @@ userBack.addEventListener('click', () => {
     seasons.style.display = 'inline-block'
 })
 creditsBack.addEventListener('click', () => {
+    pageFlip.play()
+
     creditsBack.style.display = 'none'
     creditsOption.style.display = 'none'
     options.style.display = 'inline-block'

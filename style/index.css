@@ -84,6 +84,12 @@ body{
     left: 26%;
     transform: translate(0,-50%);
 }
+.seasons svg {
+    margin-bottom: 0px;
+}
+.zombie-zone img{
+    height: 100px;
+}
 
 .user-names{
     font-family: "Sour Gummy";
