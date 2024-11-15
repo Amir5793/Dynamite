@@ -41,6 +41,14 @@ body{
     animation: close 1s ease 1;
 }
 
+.credits-option{
+    font-family: "Sour Gummy";
+    position: absolute;
+    top: 12%;
+    left: 19%;
+    width: 33%;
+}
+
 .open-book{
     display: none;
     position: relative;
@@ -75,6 +83,39 @@ body{
     top: 50%;
     left: 26%;
     transform: translate(0,-50%);
+}
+
+.user-names{
+    font-family: "Sour Gummy";
+    position: absolute;
+    top: 50%;
+    left: 18%;
+    transform: translate(0,-50%);
+}
+.user-names input {
+    font-family: "Sour Gummy";
+    outline: none;
+    width: 150%;
+    height: 30px;
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    padding: 10px;
+}
+.user-names label {
+    font-family: "Sour Gummy";
+    margin-bottom: 15px;
+    display: block;
+}
+.user-names h1 {
+    font-family: "Sour Gummy";
+}
+
+svg{
+    margin-bottom: 100px;
+}
+.credits-option svg {
+    margin: 0px;
 }
 
 
