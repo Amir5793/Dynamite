@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+    border: none;
+    margin: none;
+    padding: none;
+    user-select: none;
+}
+
+body{
+    background-color: #00366A;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.map{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+.map img {
+    width: 100%;
+    height: 100%;
+}
+
+.hidden{
+    display: none !important;
+}
+.DOT-countainer{
+    width: 59%;
+    height: 82%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.player-name{
+    display: flex;
+    border: 0px;
+    height: 10%;
+    width: 15%;
+    background-color:#00366A;
+    border-radius: 30px;
+    font-size: xx-large;
+    font-family: "Sour Gummy";
+    color: white;
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    justify-content: center;
+    align-items: center;
+}
+.next-player-btn{
+    display: inline-block;
+    border: 0px;
+    height: 10%;
+    width: 15%;
+    background-color:#20609D;
+    border-radius: 30px;
+    box-shadow: inset 1px 1px 1px 1px white;
+    font-size: xx-large;
+    font-family: "Sour Gummy";
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 15%;
+    right: 3%; 
+}
+
+.inventory-icon{
+    z-index: 100;
+    display: inline-block;
+    font-family: "Sour Gummy";
+    width: 10vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+.inventory-icon svg {
+    display: inline-block;
+    width: 100%;
+}
+
+.masseges-modal{
+    display: inline-block;
+    font-family: "Sour Gummy";
+    width: 49vw;
+    height: 74vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    margin-left: 5px;
+    position: absolute;
+    right: 0px;
+    top: 10%;
+    color: white;
+    text-shadow: 1px 1px black;
+    opacity: .3;
+    z-index: 15;
+}
+
+.health-bar{
+    display: inline-block;
+    width: 75vw;
+    height: 30px;
+    border: 2px solid white;
+    margin-top: 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0%);
+    color: white;
+}
+.health{
+    display: inline-block;
+    background-color: #c0392b;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: "Sour Gummy";
+}
+.xp-bar{
+    display: inline-block;
+    width: 60vw;
+    height: 10px;
+    border: 1px solid white;
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    transform: translate(-50%,0%);
+    color: white;
+}
+.xp{
+    display: inline-block;
+    background-color: #27ae60;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: "Sour Gummy";
+}
+
+.handcards{
+    display: inline-block;
+    width: 60%;
+    height: 12%;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+.handcards div {
+    display: flex;
+    background-image: url(../img/turnsloop/item.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+.handcards div svg {
+    width: 75%;
+}
+
+.inventory-modal{
+    display: inline-block;
+    font-family: "Sour Gummy";
+    width: 95vw;
+    height: 95vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/turnsloop/blueprint-background.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-top: 5px;
+}
+.inventory-countainer{
+    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+}
+
+.inventory-handcards{
+    display: inline-block;
+    width: 24%;
+    height: 47vh;
+    display: grid;
+    grid-template-columns:  repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+}
+.inventory-handcards div {
+    display: inline-block;
+    background-image: url('../img/turnsloop/item.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventory-handcards div svg {
+    display: inline-block;
+    width: 75%;
+    margin: 5px;
+}
+.inventory-handcards .stickman {
+    display: inline-block;
+    background-image: none;
+    grid-row: 2/4;
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inventory-handcards .stickman svg {
+    display: inline-block;
+    width: 100%;
+}
+
+.minicards{
+    display: inline-block;
+    width: 49%;
+    height: calc(60%(90vw));
+    display: grid;
+    grid-template-rows:  repeat(3,1fr);
+    grid-template-columns: repeat(7,1fr);
+}
+.minicards div {
+    display: inline-block;
+    background-image: url('../img/turnsloop/item.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crafting-table{
+    display: inline-block;
+    width: 24%;
+    height: calc(60%(90vw));
+    display: grid;
+    grid-template-rows:  repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
+    border: 5px solid #20609D;
+    position: relative;
+}
+.inventory-back{
+    display: inline-block;
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    cursor: pointer;
+}
+
+.inventory-options-countainer{
+    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+}
+.inventory-options-countainer button{
+    display: inline-block;
+    border: 0px;
+    height: 25%;
+    width: 15%;
+    background-image: linear-gradient(to right , #00366A,#182C61);
+    border-radius: 30px;
+    box-shadow: inset 1px 1px 3px #fff;
+    font-size: x-large;
+    font-family: "Sour Gummy";
+    cursor: pointer;
+    color: white;
+}
+
+.night-options{
+    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.night-option{
+    height: 10%;
+    display: inline-block;
+    border: 0px;
+    height: 15%;
+    width: 15%;
+    background-image: linear-gradient(to right , #00366A,#182C61);
+    border-radius: 30px;
+    box-shadow: inset 1px 1px 3px #fff;
+    font-size: x-large;
+    font-family: "Sour Gummy";
+    cursor: pointer;
+    color: white;
+}
+
+.night-options svg {
+    display: inline-block;
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    cursor: pointer;
+}
+
+.potrolling-options{
+    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    column-gap: 10vw;
+    flex-wrap: wrap;
+    padding: 5%;
+}
+.potrolling-option{
+    height: 10%;
+    display: inline-block;
+    border: 0px;
+    height: 15%;
+    min-width: 16vw;
+    background-image: linear-gradient(to right , #00366A,#182C61);
+    border-radius: 30px;
+    box-shadow: inset 1px 1px 3px #fff;
+    font-size: x-large;
+    font-family: "Sour Gummy";
+    cursor: pointer;
+    color: white;
+}
+
+.change-place-options-back-btn{
+    display: inline-block;
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.zombie-zone{
+    position: absolute;
+    right: 1%;
+    width: 53%;
+}
+
+.place-form{
+    position: absolute;
+    top: 50%;
+    transform: translate(0%,-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Sour Gummy";
+}
+.place-form label {
+    font-size: xx-large;
+    text-shadow: 1px 1px 2px gray;
+}
+.place-form input {
+    height: 100px;
+    width: 100px;
+    font-size: xx-large;
+    font-family: "Sour Gummy";
+    padding: 20px;
+    outline: none;
+    border-radius: 20px;
+}
+
+.chat-with-friends-options{
+    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.private-chat{
+    display: inline-block;
+    border: 0px;
+    height: 15%;
+    width: 15%;
+    background-image: linear-gradient(to right , #00366A,#182C61);
+    border-radius: 30px;
+    box-shadow: inset 1px 1px 3px #fff;
+    font-size: x-large;
+    font-family: "Sour Gummy";
+    cursor: pointer;
+    color: white;
+}
+.public-chat{
+    display: inline-block;
+    border: 0px;
+    height: 15%;
+    width: 15%;
+    background-image: linear-gradient(to right , #00366A,#182C61);
+    border-radius: 30px;
+    box-shadow: inset 1px 1px 3px #fff;
+    font-size: x-large;
+    font-family: "Sour Gummy";
+    cursor: pointer;
+    color: white;
+}
+.public-chat-options{
+     width: 100%;
+     height: 100%;
+}
+.public-masseges-countainer{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.public-massage-input{
+    width: 100%;
+    height: 10%;
+    padding: 20px;
+    font-size: xx-large;
+}
+.public-chat-options .send {
+    display: inline-block;
+    border: 0px;
+    height: 10%;
+    width: 7%;
+    margin: auto;
+    background-image: linear-gradient(to right , #00366A,#182C61);
+    font-size: x-large;
+    font-family: "Sour Gummy";
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.public-chat-options .send svg {
+    width: 100%;
+    height: 100%;
+}
+.sent-masseges{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.sent-massege{
+    width: fit-content;
+    background-color: #fff;
+    position: relative;
+    margin: 10px;
+    margin-left: 4%;
+}
+.sent-massege::after{
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: -4px;
+    left: -1px;
+    transform: rotateZ(134deg) skewX(50deg);
+    z-index: -1;
+}
+.received-masseges{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.private-chat-options{
+    display: inline-block;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+}
+.private-chat-options h1 {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.private-chat-options .players-countainer {
+    display: inline-block;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    height: 80%;
+    width: 100%;
+}
+.private-chat-options .players-countainer button {
+    display: inline-block;
+    border: 0px;
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    background-image: linear-gradient(to right , #00366A,#182C61);
+    border-radius: 30px;
+    box-shadow: inset 1px 1px 3px #fff;
+    font-size: x-large;
+    font-family: "Sour Gummy";
+    cursor: pointer;
+    color: white;
+}
+.private-masseges-countainer{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.private-massage-input{
+    width: 100%;
+    height: 10%;
+    padding: 20px;
+    font-size: xx-large;
+} 
+
+
+
+.DOT{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Sour Gummy";
+    font-size: large;
+}
