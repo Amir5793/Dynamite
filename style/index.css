@@ -14,6 +14,8 @@ body{
     user-select: none;
     overflow: hidden;
     margin: 0px;
+    width: 100vw;
+    height: 100vh;
 }
 
 .hidden{
@@ -295,4 +297,91 @@ body{
 
 .player-name p {
     margin-top: 20%;
+}
+
+
+.enter-name-modal{
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+.modal-container{
+    width: 50%;
+    height: 50%;
+    background-color: azure;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    backdrop-filter: blur(10px);
+}
+.modal-header{
+    width: 100%;
+    height: 25%;
+    font-family: 'Sour Gummy';
+    border-bottom: black 1px solid;
+    text-align: center;
+}
+.modal-input{
+    width: 85%;
+    height: 25%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,0px);
+    border-radius: 10px;
+    border:black 1px solid;
+    outline: 0px;
+    font-size: x-large;
+    font-family: 'Sour Gummy';
+    text-align: center;
+}
+.modal-btn{
+    width: 15%;
+    height: 15%;
+    background-color: aquamarine;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+.character-container{
+    position: absolute;
+    bottom: -13%;
+    right: -7%;
+    transform: rotate(-45deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7vh;
+}
+.charackter{
+    width: 25%;
+}
+.charackter-speech-container{
+    text-align: center;
+    font-family: 'Sour Gummy';
+    font-size: x-large;
+    
+}
+.charackter-speech{
+    background-color: #cc8e35;
+    text-align: center;
+    display: inline;
+}
+.start-h1{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,0px);
+    background-color: #cc8e35;
+    text-align: center;
+    display: inline;
+    font-family: 'Sour Gummy';
 }

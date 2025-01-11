@@ -1,31 +1,33 @@
+import { localStorageHandler } from "../utils/function.js"
+
 const $ = document
 
 // Functions
-    function sliderSetter (wichSlider,slider1,slider2,slider3) {
-        if(wichSlider == 'map'){
-            map1.src = slider1
-            map2.src = slider2
-            map3.src = slider3
-        }
-        if(wichSlider == 'character'){
-            character1.src = slider1
-            character2.src = slider2
-            character3.src = slider3
-        }
+function sliderSetter (wichSlider,slider1,slider2,slider3) {
+    if(wichSlider == 'map'){
+        map1.src = slider1
+        map2.src = slider2
+        map3.src = slider3
     }
+    if(wichSlider == 'character'){
+        character1.src = slider1
+        character2.src = slider2
+        character3.src = slider3
+    }
+}
 
-    function selectionSetter (wichSlider,slider1,slider2,slider3) {
-        if(wichSlider == 'map'){
-            map1.src = slider1
-            map2.src = slider2
-            map3.src = slider3
-        }
-        if(wichSlider == 'character'){
-            selectionCharacter1.src = slider1
-            selectionCharacter2.src = slider2
-            selectionCharacter3.src = slider3
-        }
+function selectionSetter (wichSlider,slider1,slider2,slider3) {
+    if(wichSlider == 'map'){
+        map1.src = slider1
+        map2.src = slider2
+        map3.src = slider3
     }
+    if(wichSlider == 'character'){
+        selectionCharacter1.src = slider1
+        selectionCharacter2.src = slider2
+        selectionCharacter3.src = slider3
+    }
+}
 
 // character slider logic
 
@@ -193,3 +195,30 @@ characterButton.addEventListener('click', () => {
 
 sliderSetter('character',characters[0],characters[1],characters[2])
 selectionSetter('character',characters[0],characters[1],characters[2])
+
+const enterNameModal = $.querySelector('.enter-name-modal')
+const modalInput = $.querySelector('.modal-input')
+const modalBtn = $.querySelector('.modal-btn')
+const charackterSpeech = $.querySelector('.charackter-speech')
+
+if (localStorageHandler('get', 'name') == null){
+    $.querySelector('.charackter-selector').classList.add('hidden')
+    $.querySelector('.map-selector').classList.add('hidden')    
+    $.querySelector('.options-coutntainer').classList.add('hidden')  
+    $.querySelector('.player-name').classList.add('hidden')  
+    enterNameModal.classList.remove('hidden')
+
+    modalBtn.addEventListener('click', () => {
+        localStorageHandler('set', 'name', modalInput.value)
+        enterNameModal.classList.add('hidden')
+        $.querySelector('.charackter-selector').classList.remove('hidden')
+        $.querySelector('.map-selector').classList.remove('hidden')    
+        $.querySelector('.options-coutntainer').classList.remove('hidden')  
+        $.querySelector('.player-name').classList.remove('hidden')
+        $.querySelector('.start-h1').classList.remove('hidden')
+
+        $.querySelector('.player-name-p').innerHTML = localStorageHandler('get' ,'name')
+    })
+}else{
+$.querySelector('.player-name-p').innerHTML = localStorageHandler('get' ,'name')
+}
