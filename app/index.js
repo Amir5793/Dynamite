@@ -1,7 +1,7 @@
 const $ = document
 
 // Functions
-    function SliderSetter (wichSlider,slider1,slider2,slider3) {
+    function sliderSetter (wichSlider,slider1,slider2,slider3) {
         if(wichSlider == 'map'){
             map1.src = slider1
             map2.src = slider2
@@ -14,11 +14,27 @@ const $ = document
         }
     }
 
+    function selectionSetter (wichSlider,slider1,slider2,slider3) {
+        if(wichSlider == 'map'){
+            map1.src = slider1
+            map2.src = slider2
+            map3.src = slider3
+        }
+        if(wichSlider == 'character'){
+            selectionCharacter1.src = slider1
+            selectionCharacter2.src = slider2
+            selectionCharacter3.src = slider3
+        }
+    }
+
 // character slider logic
 
 const characterSelectorLeft = $.querySelector('.character-selector-left')
 const characterSelectorCenter = $.querySelector('.character-selector-center')
 const characterSelectorRight = $.querySelector('.character-selector-right')
+const selectionCharacter1 = $.querySelector('#selectionCharacter1')
+const selectionCharacter2 = $.querySelector('#selectionCharacter2')
+const selectionCharacter3 = $.querySelector('#selectionCharacter3')
 
 characterSelectorLeft.addEventListener('click', () => {
     characterSelectorLeft.classList.add('top')
@@ -71,7 +87,7 @@ const map3 = $.querySelector('#map3')
 const maps = ['../img/home/zombie-zone-map-png.png','../img/home/zombie-zone-map-png.png','../img/home/zombie-zone-map-png.png','../img/home/zombie-zone-map-png.png','../img/home/zombie-zone-map-png.png','../img/home/zombie-zone-map-png.png','../img/home/zombie-zone-map-png.png','../img/home/zombie-zone-map-png.png','../img/home/zombie-zone-map-png.png','../img/home/zombie-zone-map-png.png','../img/home/zombie-zone-map-png.png']
 let firstShownMap = 0
 let lastShownMap = 3
-shownMaps = []
+let shownMaps = []
 
 previousBtn.addEventListener('click', () => {
     if(firstShownMap == 0){
@@ -80,7 +96,7 @@ previousBtn.addEventListener('click', () => {
     firstShownMap--
     lastShownMap--
     shownMaps = maps.slice(firstShownMap,lastShownMap)
-    SliderSetter('map',shownMaps[0],shownMaps[1],shownMaps[2])
+    sliderSetter('map',shownMaps[0],shownMaps[1],shownMaps[2])
     console.log(shownMaps);
     console.log(firstShownMap);
     console.log(lastShownMap);    
@@ -92,7 +108,7 @@ nextBtn.addEventListener('click', () => {
     firstShownMap++
     lastShownMap++
     shownMaps = maps.slice(firstShownMap,lastShownMap)
-    SliderSetter('map',shownMaps[0],shownMaps[1],shownMaps[2])
+    sliderSetter('map',shownMaps[0],shownMaps[1],shownMaps[2])
     console.log(shownMaps);
     console.log(firstShownMap);
     console.log(lastShownMap);    
@@ -110,7 +126,7 @@ mapButton.addEventListener('click', () => {
     mapsSelectionModal.classList.remove('hidden')
 })
 
-SliderSetter('map',maps[0],maps[1],maps[2])
+sliderSetter('map',maps[0],maps[1],maps[2])
 
 // character selection modal logic
 
@@ -134,7 +150,8 @@ charactersPreviousBtn.addEventListener('click', () => {
     firstShowncharacter--
     lastShowncharacter--
     showncharacters = characters.slice(firstShowncharacter,lastShowncharacter)
-    SliderSetter('character',showncharacters[0],showncharacters[1],showncharacters[2])
+    sliderSetter('character',showncharacters[0],showncharacters[1],showncharacters[2])
+    selectionSetter('character',showncharacters[0],showncharacters[1],showncharacters[2])
     console.log(showncharacters);
     console.log(firstShowncharacter);
     console.log(lastShowncharacter);    
@@ -146,22 +163,33 @@ charactersNextBtn.addEventListener('click', () => {
     firstShowncharacter++
     lastShowncharacter++
     showncharacters = characters.slice(firstShowncharacter,lastShowncharacter)
-    SliderSetter('character',showncharacters[0],showncharacters[1],showncharacters[2])
+    sliderSetter('character',showncharacters[0],showncharacters[1],showncharacters[2])
+    selectionSetter('character',showncharacters[0],showncharacters[1],showncharacters[2])
     console.log(showncharacters);
     console.log(firstShowncharacter);
     console.log(lastShowncharacter);    
 })
 character1.addEventListener('click',(e) => {
+    characterSelectorLeft.classList.add('top')
+
     charactersSelectionModal.classList.add('hidden')
 })
 character2.addEventListener('click',(e) => {
+    characterSelectorCenter.classList.add('top')
+
     charactersSelectionModal.classList.add('hidden')
 })
 character3.addEventListener('click',(e) => {
+    characterSelectorRight.classList.add('top')
+
     charactersSelectionModal.classList.add('hidden')
 })
 characterButton.addEventListener('click', () => {
     charactersSelectionModal.classList.remove('hidden')
+    characterSelectorLeft.classList.remove('top')
+    characterSelectorCenter.classList.remove('top')
+    characterSelectorRight.classList.remove('top')
 })
 
-SliderSetter('character',characters[0],characters[1],characters[2])
+sliderSetter('character',characters[0],characters[1],characters[2])
+selectionSetter('character',characters[0],characters[1],characters[2])

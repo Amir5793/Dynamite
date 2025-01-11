@@ -43,13 +43,13 @@
         <div class="character-slider">
 
             <div class="character-selector-left">
-            <img src="./img/turnsloop/characters/character (1).png" alt="character">
+            <img src="" alt="character" id="selectionCharacter1">
             </div>
             <div class="character-selector-center top">
-            <img src="./img/turnsloop/characters/character (2).png" alt="character">
+            <img src="" alt="character" id="selectionCharacter2">
             </div>
             <div class="character-selector-right">
-            <img src="./img/turnsloop/characters/character (3).png" alt="character">
+            <img src="" alt="character" id="selectionCharacter3">
             </div>
 
         </div>
@@ -125,6 +125,16 @@
         </div>
 
     </div>
-    <script src="./app/index.js"></script>
+
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+    <script>
+    //Initialize Parse
+    Parse.initialize("YYceaSBI2iOQuYYVTr7IIT0FOt8Vr9bJy4B1lTGm1", "D1dPBQmwMLtXDYDE1ibviC3y7HKXFRgosG9dITLT"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+    Parse.serverURL = "https://parseapi.back4app.com/";
+    </script>
+
+    <script src="./app/index.js" type="module"></script>
+
 </body>
 </html>
