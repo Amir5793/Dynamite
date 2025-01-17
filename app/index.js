@@ -86,7 +86,7 @@ joinBtn.addEventListener('click', () => {
         serverRoomsHandler('get','room',selectedRoom,'playersInRoom')
         .then(json => JSON.parse(json))
         .then(palyers => {
-            serverRoomsHandler('get','room',selectedRoom,'maxCount')
+            serverRoomsHandler('get','room',selectedRoom,'maxcount')
             .then(json => JSON.parse(json))
             .then(data => {
                 if(palyers.length == data){
