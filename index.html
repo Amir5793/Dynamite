@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/index.css">
-    <title>Dynamite</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style/index.css">
+        <title>Dynamite</title>
+    </head>
+    <body>
 
-    <h1 class="start-h1 hidden">Let's start the game</h1>
+        <div class="start-modal hidden">
+            <h1> Game is starting... </h1>
+        </div>
 
-    <div class="enter-name-modal hidden">
+        <div class="backdrop hidden">
 
-        <div class="modal-container">
+        </div>
+        
+            <div class="player-name">
+                <p class="player-name-p">player one</p>
+            </div>
+        
+        <h1 class="start-h1 hidden">Let's start the game</h1>
+        
+        <div class="enter-name-modal hidden">
 
+            <div class="modal-container">
+                
             <h1 class="modal-header">Enter your name</h1>
             <input type="text" class="modal-input">
             <button class="modal-btn">Done</button>
-
+            
         </div>
 
         <div class="character-container">
-            <div class="charackter-speech-container">
-                <h5 class="charackter-speech">
+            <div class="character-speech-container">
+                <h5 class="character-speech">
                     Hello, How are you ? <br>
                     Oh , It sounds like you are a new one <br>
                     So , let me know your name <br>
                 </h5>
             </div>
-            <img src="./img/turnsloop/characters/character (1).png" alt="helper-man" class="charackter">
+            <img src="./img/turnsloop/characters/character (1).png" alt="helper-man" class="character">
         </div>
 
     </div>
@@ -37,7 +49,7 @@
 
         <div class="characters">
 
-            <button class="previous-btn characters-previous-btn">
+            <button class="character-previous-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="7vw" height="7vh" viewBox="0 0 20 20">
                 <path fill="currentColor" d="m5.83 9l5.58-5.58L10 2l-8 8l8 8l1.41-1.41L5.83 11H18V9z" />
                 </svg>
@@ -53,7 +65,7 @@
             <img src="./img/home/zombie-zone-map-png.png" alt="zombie zone">
             <img src="./img/home/zombie-zone-map-png.png" alt="zombie zone"> -->
 
-            <button class="next-btn characters-next-btn">
+            <button class="character-next-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="7vw" height="7vh" viewBox="0 0 20 20">
                     <path fill="currentColor" d="M2 11h12.2l-5.6 5.6L10 18l8-8l-8-8l-1.4 1.4L14.2 9H2z" />
                 </svg>
@@ -63,7 +75,7 @@
 
     </div>
 
-    <div class="charackter-selector">
+    <div class="character-selector">
         <button class="character-button">characters</button>
         <div class="character-slider">
 
@@ -85,7 +97,7 @@
 
         <div class="maps">
 
-            <button class="previous-btn">
+            <button class="map-previous-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="7vw" height="7vh" viewBox="0 0 20 20">
                 <path fill="currentColor" d="m5.83 9l5.58-5.58L10 2l-8 8l8 8l1.41-1.41L5.83 11H18V9z" />
                 </svg>
@@ -101,7 +113,7 @@
             <img src="./img/home/zombie-zone-map-png.png" alt="zombie zone">
             <img src="./img/home/zombie-zone-map-png.png" alt="zombie zone"> -->
 
-            <button class="next-btn">
+            <button class="map-next-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="7vw" height="7vh" viewBox="0 0 20 20">
                     <path fill="currentColor" d="M2 11h12.2l-5.6 5.6L10 18l8-8l-8-8l-1.4 1.4L14.2 9H2z" />
                 </svg>
@@ -109,10 +121,6 @@
 
         </div>
 
-    </div>
-
-    <div class="player-name">
-        <p class="player-name-p">player one</p>
     </div>
 
     <div class="map-selector">
@@ -140,15 +148,69 @@
             
             <h1 class="start">start</h1>
             <h1 class="settings">settings</h1>
-            <h1 class="credits">credits</h1>
+            <h1 class="about-us">About us</h1>
+
+        </div>
+        <div class="about-us-modal">
+
+            <div class="about-us-option hidden">
+                <h3>This game is programed by "Amir Ali Nakhostin" an Iranian programmer . first when "Amir Ali" , his cousin "Abbas Khoshiram" and his brother "Arash" was bored sudenly a good Idea comes to "Abbas"'s brain and said "Let's create a game to we play. "Amir Ali" can you program it ?" and then in the summer of 2020 we started to program it and the result is the game that you are playing now. so play and enjoy.</h3>
+                <p class="tap-to-hide">tap to hide</p>
+            </div>
 
         </div>
 
-       <div class="credits-option" style="display: none;">
-            <svg class="credits-back" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path fill="black" fill-rule="evenodd" stroke="black" stroke-linejoin="round" stroke-width="4" d="M44 40.836q-7.34-8.96-13.036-10.168t-10.846-.365V41L4 23.545L20.118 7v10.167q9.523.075 16.192 6.833q6.668 6.758 7.69 16.836Z" clip-rule="evenodd"/></svg>
-            <h3>This game is programed by "Amir Ali Nakhostin" an Iranian programmer . first when "Amir Ali" , his cousin "Abbas Khoshiram" and his brother "Arash" was bored sudenly a good Idea comes to "Abbas"'s brain and said "Let's create a game to we play. "Amir Ali" can you program it ?" and then in the summer of 2020 we started to program it and the result is the game that you are playing now. so play and enjoy.</h3>
+    </div>
+
+    <div class="start-options hidden">
+
+        <div class="room-options">
+
+            <div class="join-room selected">Join room</div>
+            <div class="my-rooms">My rooms</div>
+            <div class="host-room">Host room</div>
+            <div class="back"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" stroke="currentColor" stroke-linejoin="round" stroke-width="4" d="M44 40.836q-7.34-8.96-13.036-10.168t-10.846-.365V41L4 23.545L20.118 7v10.167q9.523.075 16.192 6.833q6.668 6.758 7.69 16.836Z" clip-rule="evenodd"/></svg></div>
+
         </div>
 
+        <div class="join-main-content">
+
+            <div class="servers"></div>
+
+            <button class="join-btn hidden">Join</button>
+
+            <div class="loading hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><circle cx="12" cy="2" r="0" fill="#ffb142"><animate attributeName="r" begin="0" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(45 12 12)"><animate attributeName="r" begin="0.125s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(90 12 12)"><animate attributeName="r" begin="0.25s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(135 12 12)"><animate attributeName="r" begin="0.375s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(180 12 12)"><animate attributeName="r" begin="0.5s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(225 12 12)"><animate attributeName="r" begin="0.625s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(270 12 12)"><animate attributeName="r" begin="0.75s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(315 12 12)"><animate attributeName="r" begin="0.875s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle></svg>
+                <h2>Finding rooms</h2>
+            </div>
+
+        </div>
+        <div class="my-rooms-main-content">
+            <div class="my-servers"></div>
+        </div>
+        <div class="host-main-content">
+            <div class="roomName-input-container">
+                <label for="roomName-input">please enter room name</label>
+                <input type="text" name="roomName-input" class="roomName-input">
+            </div>
+            <div class="roomPass-input-container">
+                <label for="roomPass-input">please enter room password</label>
+                <input type="password" name="roomPass-input" class="roomPass-input">
+            </div>
+            <div class="roomCount-input-container">
+                <label for="roomCount-input" class="roomCount-label">please enter room player count</label>
+                <input type="number" class="roomCount-input" min="2" max="10" name="roomCount-input">
+            </div>
+            <div class="roomError-container">
+                <h1 class="error hidden"></h1>
+            </div>
+            <button class="room-submite-btn">Create</button>
+
+        </div>
+        <div class="waiting-room hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><circle cx="12" cy="2" r="0" fill="#ffb142"><animate attributeName="r" begin="0" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(45 12 12)"><animate attributeName="r" begin="0.125s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(90 12 12)"><animate attributeName="r" begin="0.25s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(135 12 12)"><animate attributeName="r" begin="0.375s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(180 12 12)"><animate attributeName="r" begin="0.5s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(225 12 12)"><animate attributeName="r" begin="0.625s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(270 12 12)"><animate attributeName="r" begin="0.75s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="#ffb142" transform="rotate(315 12 12)"><animate attributeName="r" begin="0.875s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle></svg>
+            <h2>Waiting for other players to join</h2>
+        </div>
     </div>
 
     <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>

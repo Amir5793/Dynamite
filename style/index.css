@@ -47,6 +47,46 @@ body{
 .main-options h1:active{
     scale: .9;
 }
+.about-us-option{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 75vw;
+}
+.about-us-modal h3 {
+    background-color: #cc8e35;
+    text-align: center;
+    display: inline;
+    font-family: 'Sour Gummy';
+    line-height: 2rem;
+}
+.tap-to-hide{
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-family: 'Sour Gummy';
+}
+.backdrop{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+}
+.start-modal{
+    background-color: #cc8e35;
+    text-align: center;
+    display: inline;
+    font-family: 'Sour Gummy';
+    line-height: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    border-radius: 5px;
+}
 
 .top{
     transition: all ease-in .2s;
@@ -270,28 +310,52 @@ body{
     flex-wrap: nowrap;
     overflow: hidden;
 }
-.previous-btn{
+.map-previous-btn{
     background-color: transparent;
     margin-right: 2%;
     margin-left: 2%;
     cursor: pointer;
 }
-.previous-btn:active {
+.map-previous-btn:active {
     scale: .9;
 }
-.previous-btn svg {
+.map-previous-btn svg {
     color: aliceblue;
 }
-.next-btn{
+.map-next-btn{
     background-color: transparent;
     margin-right: 2%;
     margin-left: 2%;
     cursor: pointer;
 }
-.next-btn:active {
+.map-next-btn:active {
     scale: .9;
 }
-.next-btn svg {
+.map-next-btn svg {
+    color: aliceblue;
+}
+.character-previous-btn{
+    background-color: transparent;
+    margin-right: 2%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+.character-previous-btn:active {
+    scale: .9;
+}
+.character-previous-btn svg {
+    color: aliceblue;
+}
+.character-next-btn{
+    background-color: transparent;
+    margin-right: 2%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+.characternext-btn:active {
+    scale: .9;
+}
+.characternext-btn svg {
     color: aliceblue;
 }
 
@@ -309,7 +373,7 @@ body{
 .modal-container{
     width: 50%;
     height: 50%;
-    background-color: azure;
+    background-color: #cc8e35;
     border: 1px solid #ccc;
     border-radius: 15px;
     position: absolute;
@@ -342,7 +406,7 @@ body{
 .modal-btn{
     width: 15%;
     height: 15%;
-    background-color: aquamarine;
+    background-color: #ffb142;
     color: black;
     border: none;
     border-radius: 10px;
@@ -384,4 +448,250 @@ body{
     text-align: center;
     display: inline;
     font-family: 'Sour Gummy';
+}
+
+.start-options{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #cc8e35;
+    width: 85%;
+    height: 90%;
+    border-radius: 10px;
+}
+.room-options{
+    border-bottom: black 1px solid;
+}
+.join-room{
+    background-color: #ffb142;
+    display: inline-block;
+    font-family: 'Sour Gummy';
+    font-size: xx-large;
+    border-top-left-radius: 10px;
+}
+.my-rooms{
+    background-color: #ffb142;
+    display: inline-block;
+    font-family: 'Sour Gummy';
+    font-size: xx-large;
+}
+.host-room{
+    background-color: #ffb142;
+    display: inline-block;
+    font-family: 'Sour Gummy';
+    font-size: xx-large;
+}
+.selected{
+    border-bottom: #ffb142 2px solid ;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.back{
+    float: right;
+    background-color: #ffb142;
+
+}
+.join-main-content{
+    padding-top: 1rem;
+    position: relative;
+    height: calc(100% - 44px);
+}
+.servers{
+    font-family: 'Sour Gummy';
+    font-size: x-large;
+    overflow-y: auto;
+    height: calc(100% - 44px);
+}
+.server{
+    background-color: #ffb142;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: block;
+}
+.server input[type="radio"] {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 2px solid #cc8e35;
+    border-radius: 50%;
+    appearance: none;
+    background-color: #cc8e35;
+    outline: none;
+}
+.server input[type="radio"]:not(:disabled):checked {
+    border-color: #cc8e35;
+    background-color: #ffb142;
+    outline: #cc8e35 3px solid;
+    background-clip: content-box;
+    padding: 3px;
+}
+.join-main-content button {
+    background-color: #ffb142;
+    font-family: 'Sour Gummy';
+    font-size: xx-large;
+    border: 10px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 10px;
+}
+.my-rooms-main-content{
+    padding-top: 1rem;
+    position: relative;
+    height: calc(100% - 44px);
+}
+.my-servers{
+    font-family: 'Sour Gummy';
+    font-size: x-large;
+    overflow-y: auto;
+    height: calc(100%);
+}
+.loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.loading h2 {
+    background-color: #ffb142;
+    text-align: center;
+    font-family: 'Sour Gummy';
+}
+.loading svg {
+    margin: auto auto;
+}
+.waiting-room{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.waiting-room h2 {
+    background-color: #ffb142;
+    text-align: center;
+    font-family: 'Sour Gummy';
+}
+.waiting-room svg {
+    margin: auto auto;
+}
+.host-main-content{
+    width: 100%;
+    height: calc(100% - 44px);
+    position: relative;
+}
+.roomName-input-container{
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%,0px);
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.roomName-input-container input {
+    width: 50vw;
+    height: 10vh;
+    background-color: #ffb142;
+    border-radius: 10px;
+    font-family: 'Sour Gummy';
+    font-size: xx-large;
+    text-align: center;
+    outline: none;
+}
+.roomName-input-container input:focus{
+    border: #ffda79 5px solid;
+}
+.roomName-input-container label {
+    background-color: #ffb142;
+    font-family: 'Sour Gummy';
+    font-size: x-large;
+    display: inline;
+    width: fit-content;
+}
+.roomPass-input-container{
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%,0px);
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.roomPass-input-container input {
+    width: 50vw;
+    height: 10vh;
+    background-color: #ffb142;
+    border-radius: 10px;
+    font-family: 'Sour Gummy';
+    font-size: xx-large;
+    text-align: center;
+    outline: none;
+}
+.roomPass-input-container input:focus{
+    border: #ffda79 5px solid;
+}
+.roomPass-input-container label {
+    background-color: #ffb142;
+    font-family: 'Sour Gummy';
+    font-size: x-large;
+    display: inline;
+    width: fit-content;
+}
+.roomCount-input-container{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,0px);
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.roomCount-label{
+    background-color: #ffb142;
+    font-family: 'Sour Gummy';
+    font-size: x-large;
+    display: inline;
+    width: fit-content;
+    text-wrap: nowrap;
+}
+.roomCount-input{
+    width: 50vw;
+    height: 10vh;
+    background-color: #ffb142;
+    border-radius: 10px;
+    font-family: 'Sour Gummy';
+    font-size: xx-large;
+    text-align: center;
+    outline: none;
+}
+.roomCount-input-container input:focus{
+    border: #ffda79 5px solid;
+}
+.room-submite-btn{
+    background-color: #ffb142;
+    font-family: 'Sour Gummy';
+    font-size: xx-large;
+    border: 10px;
+    position: absolute;
+    bottom: 0%;
+    right: 0px;
+    border-radius: 10px;
+}
+.roomError-container{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%,0px);
+    min-width: 50Vw;
+}
+.error{
+    background-color: #ffb142;
+    font-family: 'Sour Gummy';
+    font-size: large;
+    display: inline;
+    width: fit-content;
+    color: #b33939;
+
 }
